@@ -142,7 +142,7 @@ export default function AboutPage() {
             ))}
           </div>
           <p className="mt-4 text-xs text-gray-500">
-            *Data fasilitas dan prestasi di atas adalah contoh (dummy) dan dapat diganti dengan data resmi sekolah.
+            
           </p>
         </section>
       </div>

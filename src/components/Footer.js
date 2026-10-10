@@ -1,5 +1,17 @@
 import Link from "next/link";
 
+const links = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Guru", href: "/guru" },
+  { label: "Fasilitas", href: "/fasilitas" },
+  { label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
+  { label: "Prestasi", href: "/prestasi" },
+  { label: "Berita", href: "/berita" },
+  { label: "Galeri", href: "/galeri" },
+  { label: "Kontak", href: "/kontak" },
+];
+
 export default function Footer() {
   const tahun = new Date().getFullYear();
 
@@ -20,22 +32,14 @@ export default function Footer() {
         {/* Navigasi */}
         <div>
           <h3 className="mb-2 text-lg font-bold text-gold">Navigasi</h3>
-          <ul className="space-y-1 text-sm">
-            <li>
-              <Link href="/" className="text-gray-200 transition-colors hover:text-gold">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="text-gray-200 transition-colors hover:text-gold">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/berita" className="text-gray-200 transition-colors hover:text-gold">
-                Berita
-              </Link>
-            </li>
+          <ul className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm">
+            {links.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-gray-200 transition-colors hover:text-gold">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

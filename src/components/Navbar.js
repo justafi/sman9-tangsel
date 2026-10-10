@@ -8,7 +8,12 @@ import { usePathname } from "next/navigation";
 const menu = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Guru", href: "/guru" },
+  { label: "Fasilitas", href: "/fasilitas" },
+  { label: "Ekskul", href: "/ekstrakurikuler" },
+  { label: "Prestasi", href: "/prestasi" },
   { label: "Berita", href: "/berita" },
+  { label: "Galeri", href: "/galeri" },
   { label: "Kontak", href: "/kontak" },
 ];
 
@@ -43,12 +48,12 @@ export default function Navbar() {
         </Link>
 
         {/* Menu desktop */}
-        <ul className="hidden items-center gap-2 md:flex">
+        <ul className="hidden items-center gap-2 xl:flex">
           {menu.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors duration-200 hover:bg-gold hover:text-navy ${
+                className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors duration-200 hover:bg-gold hover:text-navy ${
                   isActive(item.href)
                     ? "bg-gold text-navy"
                     : "text-white"
@@ -66,7 +71,7 @@ export default function Navbar() {
           aria-label="Buka menu"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
-          className="rounded-lg border border-gold p-2 text-gold transition-colors hover:bg-gold hover:text-navy md:hidden"
+          className="rounded-lg border border-gold p-2 text-gold transition-colors hover:bg-gold hover:text-navy xl:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +92,7 @@ export default function Navbar() {
 
       {/* Menu mobile */}
       {open && (
-        <ul className="flex flex-col gap-1 border-t border-navy-light bg-navy-dark px-4 py-3 md:hidden">
+        <ul className="flex flex-col gap-1 border-t border-navy-light bg-navy-dark px-4 py-3 xl:hidden">
           {menu.map((item) => (
             <li key={item.href}>
               <Link
