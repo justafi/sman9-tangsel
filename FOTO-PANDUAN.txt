@@ -1,0 +1,24 @@
+CARA MENGGANTI FOTO (tanpa mengubah kode)
+==========================================
+Tinggal timpa file di folder public/ dengan foto asli Anda,
+dengan NAMA FILE PERSIS SAMA (huruf kecil semua, ekstensi .jpg).
+
+public/logo.png                          -> logo sekolah (Navbar)
+public/berita/mpls.jpg                   -> berita 1: MPLS
+public/berita/spmb-non-akademik.jpg      -> berita 2: SPMB Prestasi Non Akademik
+public/berita/spmb-akademik.jpg          -> berita 3: SPMB Prestasi Akademik
+public/berita/diterima-ptn.jpg           -> berita 4: Diterima di PTN
+public/berita/spmb-domisili.jpg          -> berita 5: SPMB Domisili
+public/berita/info-spmb.jpg              -> berita 6: Informasi SPMB
+
+Tips: rasio 16:9 (mis. 1200x675), di bawah 300 KB. Logo persegi.
+Setelah menimpa file, refresh browser (Ctrl+F5).
+
+FOTO SLIDE HERO (background halaman Home)
+-----------------------------------------
+public/hero/hero-1.jpg   -> slide 1
+public/hero/hero-2.jpg   -> slide 2
+public/hero/hero-3.jpg   -> slide 3
+Ukuran disarankan 1920x800 (landscape), di bawah 500 KB.
+Ganti slide tiap 5 detik. Mau tambah slide? Tambahkan path baru di
+daftar "slides" pada src/components/HeroSlider.js.
