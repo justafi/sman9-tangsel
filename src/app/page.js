@@ -1,12 +1,8 @@
 import Link from "next/link";
-import NewsCard from "@/components/NewsCard";
+import BeritaList from "@/components/BeritaList";
 import HeroSlider from "@/components/HeroSlider";
-import berita from "@/data/berita";
 
 export default function HomePage() {
-  // 3 berita terbaru (data sudah diurutkan dari yang terbaru)
-  const beritaTerbaru = berita.slice(0, 3);
-
   return (
     <>
       {/* Hero */}
@@ -88,11 +84,7 @@ export default function HomePage() {
           <div className="mx-auto mt-3 h-1 w-16 rounded bg-gold" />
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {beritaTerbaru.map((item) => (
-            <NewsCard key={item.id} berita={item} />
-          ))}
-        </div>
+        <BeritaList batas={3} />
 
         <div className="mt-10 text-center">
           <Link

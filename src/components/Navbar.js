@@ -21,6 +21,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  // Navbar publik disembunyikan di dashboard admin
+  if (pathname.startsWith("/admin")) return null;
+
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 

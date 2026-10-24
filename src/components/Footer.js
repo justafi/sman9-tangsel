@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   { label: "Home", href: "/" },
@@ -13,7 +16,11 @@ const links = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
   const tahun = new Date().getFullYear();
+
+  // Footer publik disembunyikan di dashboard admin
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <footer className="mt-16 border-t-4 border-gold bg-navy text-white">
@@ -59,6 +66,10 @@ export default function Footer() {
 
       <div className="border-t border-navy-light bg-navy-dark py-4 text-center text-xs text-gray-300">
         &copy; {tahun} SMA Negeri 9 Kota Tangerang Selatan. Seluruh hak cipta dilindungi.
+        <span className="mx-2 text-gray-500">|</span>
+        <Link href="/admin" className="transition-colors hover:text-gold">
+          Admin
+        </Link>
       </div>
     </footer>
   );
